@@ -1,0 +1,24 @@
+<div class="department-item">
+    <h2>{{ config.title }}</h2>
+    <div class="thumbnail">
+        <i class="fas fa-archway"></i>
+    </div>
+    <div class="action">
+        <div class="btn-container">
+            <button class="simple-btn inverse">open</button>
+            <div (click)="toggleSubNav()" class="arrow" [class.opened]="isOpened">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <div class="dep-nav" [class.navOpened]="isOpened">
+                <div routerLink="/edit/{{ config.key }}" class="dep-nav-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span>edit</span>
+                </div>
+                <div (click)="delete()" class="dep-nav-item">
+                    <i class="fas fa-trash-alt"></i>
+                    <span>delete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

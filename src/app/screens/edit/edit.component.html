@@ -1,0 +1,90 @@
+<app-breadcrumbs [config]="breadcrumbsConfig"></app-breadcrumbs>
+
+<form [formGroup]="editDepartmentForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="container form-field">
+                <div class="legend">
+                    <span>Department Info</span>
+                </div>
+                <div class="row field">
+                    <div class="col-2">
+                        <label for="title">Name</label>
+                    </div>
+                    <div class="col-10">
+                        <input
+                            type="text"
+                            class="input-field"
+                            formControlName="title">
+                    </div>
+                </div>
+                <div class="row field">
+                    <div class="col-2">
+                        <label for="key">API Key</label>
+                    </div>
+                    <div class="col-10">
+                        <input
+                            type="text"
+                            class="input-field"
+                            formControlName="key">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8 offset-2">
+            <div class="container form-field" formGroupName="contact">
+                <div class="legend">
+                    <span>Department Contact Person</span>
+                </div>
+                <div class="row field">
+                    <div class="col-2">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="col-10">
+                        <input
+                            type="text"
+                            class="input-field"
+                            formControlName="name">
+                    </div>
+                </div>
+                <div class="row field">
+                    <div class="col-2">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col-10">
+                        <input
+                            type="email"
+                            class="input-field"
+                            formControlName="email">
+                    </div>
+                </div>
+                <div class="row field">
+                    <div class="col-2">
+                        <label for="tel">Telephone</label>
+                    </div>
+                    <div class="col-10">
+                        <input
+                            type="text"
+                            class="input-field"
+                            formControlName="tel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="container form-field">
+                <div class="row">
+                    <div class="col-4">
+                        <button routerLink="/departments" class="simple-btn shade">Cancel</button>
+                    </div>
+                    <div class="col-8">
+                        <button type="submit" [disabled]="!editDepartmentForm.valid" class="simple-btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

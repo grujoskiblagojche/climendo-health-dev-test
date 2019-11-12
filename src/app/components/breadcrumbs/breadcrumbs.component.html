@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col">
+        <ul class="breadcrumb">
+            <li
+                *ngFor="let breadcrumb of config"
+                class="breadcrumb-item active" aria-current="page">
+                {{ breadcrumb }}
+                <span>></span>
+            </li>
+        </ul>
+    </div>
+</div>

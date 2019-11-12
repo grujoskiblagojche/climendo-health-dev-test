@@ -1,0 +1,24 @@
+<app-breadcrumbs [config]="breadcrumbsConfig"></app-breadcrumbs>
+
+<div class="row search-container">
+    <div class="col-8">
+        <div class="input-container">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                <input
+                    type="text"
+                    class="input-field"
+                    placeholder="Search"
+                    formControlName="term">
+            </form>
+        </div>
+    </div>
+    <div class="col-4">
+        <button routerLink="/create" class="simple-btn">Create New Department</button>
+    </div>
+</div>
+
+<div *ngIf="departments.length" class="row">
+    <div *ngFor="let department of filteredDepartments; let i = index" class="col-3">
+        <app-department-item [config]="department" (deleteDepartment)="onRemoveDepartment($event)"></app-department-item>
+    </div>
+</div>
